@@ -127,7 +127,7 @@ def get_lenet(add_stn=True):
     # loss
     lenet = mx.symbol.SoftmaxOutput(data=fc2, name='softmax')
     return lenet
-False
+
 def get_iterator(data_shape):
 
     def to4d(img):
@@ -210,8 +210,7 @@ if __name__ == '__main__':
     #vis.render('stn')
     
     # train
-    #train_model.fit(args, net, get_iterator(data_shape))
-    model = mx.model.FeedForward()
+    train_model.fit(args, net, get_iterator(data_shape))
     
     
     
