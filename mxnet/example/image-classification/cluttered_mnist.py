@@ -148,8 +148,8 @@ def get_iterator(data_shape):
         train = mx.io.NDArrayIter(
             to4d(X_train),
             to1d(y_train),
-            args.batch_size)
-            #shuffle = True)
+            args.batch_size,
+            shuffle = True)
 
         val = mx.io.NDArrayIter(
             to4d(X_valid),
@@ -210,7 +210,8 @@ if __name__ == '__main__':
     #vis.render('stn')
     
     # train
-    train_model.fit(args, net, get_iterator(data_shape))
+    #train_model.fit(args, net, get_iterator(data_shape))
+    model = mx.model.FeedForward()
     
     
     
